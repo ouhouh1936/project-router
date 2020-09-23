@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navigation from "./Layouts/Navigation";
+import { Route } from "react-router-dom";
+import Oeh from "./screen/Oeh";
+import Min from "./screen/Min";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Route path="/" component={Navigation} />
+        <Route exact path="/oeh" component={Oeh} />
+        <Route exact path="/min" component={Min} />
+      </div>
+    );
+  }
 }
-
 export default App;
